@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+    width: 375px;
+    background-color: blue;
+}
+
+.chat-uol {
+
+    background-color: #E5E5E5;
+}
+
+header {
+    background-color: blueviolet;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0 0 20px #5c5858;
+}
+
+.logo {
+    margin-right: 95px;
+}
+
+.friendlist {
+    margin-left: 95px;
+}
+
+.mensagens {
+    width: 375px;
+    height: 507px;
+}
+
+footer {
+    height: 80px;
+    width: 375px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0 0 20px #b9b5b5;
+}
+
+.escrever input{
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    margin-right: 25px;
+    outline: none;
+    border: none;
+}
+
+.ionicon {
+    font-size: 26px;
+    margin-left: 25px;
+}
+
+.escrever input::placeholder {
+    font-style: italic;
+    color: #000000;
+}
+
+button {
+    border: none;
+    background-color: white;
+}
