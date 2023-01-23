@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body {
     width: 375px;
-    background-color: blue;
+    background-color: #f7f4f4;
 }
 
 .chat-uol {
 
-    background-color: #E5E5E5;
+    background-color: #f7f4f4;
 }
 
 header {
-    background-color: blueviolet;
+    background-color: white;
     height: 80px;
     display: flex;
     align-items: center;
@@ -36,10 +36,12 @@ header {
 .name-chat {
     font-weight: bold;
     padding: 0px 4px;
+    min-width: 40px;
 }
 
 .tempo-chat {
     color: #AAAAAA;
+    min-width: 40px;
 }
 
 footer {
@@ -79,14 +81,14 @@ button {
 }
 
 .todas-msgs {
-    width: 375px;
+    min-width: 375px;
     min-height: 40px;
     background-color: white;
     margin-bottom: 5px;
-    display: flex;
-    align-items: center;
     word-break: break-all;
     border-radius: 2px;
+    display: flex;
+    align-items: center;
 }
 
 .status {
