@@ -21,13 +21,6 @@ function logarUsuario() {
 
 logarUsuario();
 
-function manterConxão() {
-  axios.post("https://mock-api.driven.com.br/api/v6/uol/status", {
-    name: nome,
-  });
-}
-
-//buscando mensagens do servidor
 function buscarMensagens() {
   let buscaMsg = axios.get(
     "https://mock-api.driven.com.br/api/v6/uol/messages"
@@ -66,6 +59,14 @@ function mostrarTodasMensagens(resposta) {
 
   document.querySelector(".todas-msgs:last-child").scrollIntoView();
 }
+
+function manterConxão() {
+  axios.post("https://mock-api.driven.com.br/api/v6/uol/status", {
+    name: nome,
+  });
+}
+
+
 
 function enviarMensagens() {
   let mensagemDigitada = document.querySelector("input");
