@@ -10,7 +10,6 @@ function logarUsuario() {
   );
 
   logar.then((res) => {
-    console.log(res);
     buscarMensagens();
     setInterval(manterConxão, 5000);
     setInterval(buscarMensagens, 5000);
@@ -77,10 +76,14 @@ function enviarMensagens() {
     type: "message",
   };
   axios
-    .post("https://mock-api.driven.com.br/api/v6/uol/messages", enviandoMensagem)
-    .then(()=>{
-        mensagemDigitada.value = '';
-        buscarMensagens()})
+    .post(
+      "https://mock-api.driven.com.br/api/v6/uol/messages",
+      enviandoMensagem
+    )
+    .then(() => {
+      mensagemDigitada.value = "";
+      buscarMensagens();
+    })
     .catch(() => {
       window.location.reload();
     });
