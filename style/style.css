@@ -16,6 +16,8 @@ header {
     align-items: center;
     justify-content: space-evenly;
     box-shadow: 0 0 20px #5c5858;
+    position: sticky;
+    top: 0;
 }
 
 .logo {
@@ -26,9 +28,18 @@ header {
     margin-left: 95px;
 }
 
-.mensagens {
+.chat {
     width: 375px;
-    height: 507px;
+    height: 100%;
+}
+
+.name-chat {
+    font-weight: bold;
+    padding: 0px 4px;
+}
+
+.tempo-chat {
+    color: #AAAAAA;
 }
 
 footer {
@@ -39,6 +50,8 @@ footer {
     align-items: center;
     justify-content: space-evenly;
     box-shadow: 0 0 20px #b9b5b5;
+    position: sticky;
+    bottom: 0;
 }
 
 .escrever input{
@@ -63,4 +76,19 @@ footer {
 button {
     border: none;
     background-color: white;
+}
+
+.todas-msgs {
+    width: 375px;
+    min-height: 40px;
+    background-color: white;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    word-break: break-all;
+    border-radius: 2px;
+}
+
+.status {
+    background-color: #DCDCDC;
 }
