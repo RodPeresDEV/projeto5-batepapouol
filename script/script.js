@@ -12,7 +12,7 @@ function logarUsuario() {
   logar.then((res) => {
     buscarMensagens();
     setInterval(manterConxão, 5000);
-    setInterval(buscarMensagens, 5000);
+    setInterval(buscarMensagens, 3000);
   });
   logar.catch(() => {
     logarUsuario();
@@ -25,6 +25,7 @@ function buscarMensagens() {
   let buscaMsg = axios.get(
     "https://mock-api.driven.com.br/api/v6/uol/messages"
   );
+  console.log(buscaMsg);
   buscaMsg.then(mostrarTodasMensagens);
   buscaMsg.catch();
 }
@@ -39,7 +40,7 @@ function mostrarTodasMensagens(resposta) {
     const to = todasMensagens[i].to;
     const type = todasMensagens[i].type;
 
-    if (type === "private-message" && (from === nome || to === nome)) {
+    if (type === "private_message" && (from === nome || to === nome)) {
       chat.innerHTML += `
                 <div class="todas-msgs private" data-test="message">
                     <p> <span class="tempo-chat">(${time})</span> <span class="name-chat">${from}</span>${text}</p>
