@@ -25,9 +25,10 @@ function buscarMensagens() {
   let buscaMsg = axios.get(
     "https://mock-api.driven.com.br/api/v6/uol/messages"
   );
-  console.log(buscaMsg);
   buscaMsg.then(mostrarTodasMensagens);
-  buscaMsg.catch();
+  buscaMsg.catch(() => {
+    window.location.reload();
+  });
 }
 
 function mostrarTodasMensagens(resposta) {
@@ -62,8 +63,14 @@ function mostrarTodasMensagens(resposta) {
 }
 
 function manterConxão() {
-  axios.post("https://mock-api.driven.com.br/api/v6/uol/status", {
+  let promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/status", {
     name: nome,
+  });
+  promise.then(() => {
+    buscarMensagens();
+  })
+  promise.catch(() => {
+    window.location.reload();
   });
 }
 
@@ -77,16 +84,16 @@ function enviarMensagens() {
     text: mensagemDigitada.value,
     type: "message",
   };
-  axios
+  let promessa = axios
     .post(
       "https://mock-api.driven.com.br/api/v6/uol/messages",
       enviandoMensagem
     )
-    .then(() => {
+    promessa.then(() => {
       mensagemDigitada.value = "";
       buscarMensagens();
     })
-    .catch(() => {
+    promessa.catch(() => {
       window.location.reload();
     });
 }
