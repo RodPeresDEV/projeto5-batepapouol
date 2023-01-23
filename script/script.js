@@ -44,21 +44,20 @@ function mostrarTodasMensagens(resposta) {
     if (type === "private_message" && (from === nome || to === nome)) {
       chat.innerHTML += `
                 <div class="todas-msgs private" data-test="message">
-                    <p> <span class="tempo-chat">(${time})</span> <span class="name-chat">${from}</span>${text}</p>
+                <p> <span class="tempo-chat">(${time})</span> <span class="name-chat">${from}</span> reservadamente para <span class="name-chat">${to}:</span>${text}</p>
                 </div>`;
     } else if (type === "status") {
       chat.innerHTML += `
                 <div class="todas-msgs status" data-test="message">
                     <p> <span class="tempo-chat">(${time})</span> <span class="name-chat">${from}</span>${text}</p>
                 </div>`;
-    } else {
+    } else if (type === "message") {
       chat.innerHTML += `
                 <div class="todas-msgs" data-test="message">
                     <p> <span class="tempo-chat">(${time})</span> <span class="name-chat">${from}</span> para <span class="name-chat">${to}:</span>${text}</p>
                 </div>`;
     }
   }
-
   document.querySelector(".todas-msgs:last-child").scrollIntoView();
 }
 
